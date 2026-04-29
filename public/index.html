@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOB Bank | Professional Financial Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="toast-container"></div>
+
+  <!-- Login/Signup Screen -->
+  <div id="login-screen" class="screen active">
+    <div class="glass-panel login-panel">
+      <h1>GOB Bank</h1>
+      <p id="auth-subtitle">Secure Banking Portal</p>
+      
+      <input type="text" id="account-input" class="modern-input" placeholder="Account Number">
+      
+      <div class="pin-display" style="margin-top: 10px;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="keypad">
+        <button class="key">1</button>
+        <button class="key">2</button>
+        <button class="key">3</button>
+        <button class="key">4</button>
+        <button class="key">5</button>
+        <button class="key">6</button>
+        <button class="key">7</button>
+        <button class="key">8</button>
+        <button class="key">9</button>
+        <button class="key action clear">CLR</button>
+        <button class="key">0</button>
+        <button class="key action enter" id="auth-submit">ENT</button>
+      </div>
+      
+      <div class="auth-toggle">
+        <span id="toggle-auth-text">New user? </span>
+        <button class="text-btn" onclick="toggleAuthMode()" id="toggle-auth-btn">Sign Up here</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Screen -->
+  <div id="dashboard-screen" class="screen">
+    <div class="dashboard-container">
+      
+      <header class="top-bar">
+        <h2>GOB Bank</h2>
+        <div class="user-badge" id="logged-in-user">User: 1001</div>
+        <button class="btn-logout" onclick="logout()">Logout</button>
+      </header>
+
+      <div class="main-content">
+        <!-- Left Column: Balance & Transfer -->
+        <div class="glass-panel main-panel">
+          <h3>Available Balance</h3>
+          <h1 id="balance-display">$0.00</h1>
+
+          <div class="transaction-controls">
+            <input type="number" id="amount-input" class="modern-input" placeholder="Amount ($)" min="0" step="0.01">
+            <div class="action-buttons">
+              <button class="btn-primary" onclick="transact('deposit')">Deposit</button>
+              <button class="btn-secondary" onclick="transact('withdraw')">Withdraw</button>
+            </div>
+            
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                <h3 style="margin-bottom: 10px;">Transfer Money</h3>
+                <select id="contact-dropdown" class="modern-input" style="padding: 12px; margin-bottom: 10px;">
+                    <option value="">Select Contact</option>
+                </select>
+                <input type="text" id="manual-recipient" class="modern-input" placeholder="Or enter Account Number" style="padding: 12px; margin-bottom: 15px;">
+                <button class="btn-tertiary" style="width: 100%" onclick="transact('transfer')">Send Money</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: History & Contacts -->
+        <div class="right-column">
+            <!-- Contacts Panel -->
+            <div class="glass-panel contacts-panel">
+              <h3>Contacts Address Book</h3>
+              <div class="add-contact-row" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                  <input type="text" id="new-contact-input" class="modern-input" style="margin: 0; padding: 10px;" placeholder="Account #">
+                  <button class="btn-primary" style="padding: 0 15px; border-radius: 8px; font-weight:600;" onclick="addContact()">Add</button>
+              </div>
+              <div id="contacts-list" class="contacts-list"></div>
+            </div>
+
+            <!-- History Panel -->
+            <div class="glass-panel history-panel" style="height: 320px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 15px;">
+                  <h3 style="margin: 0; border: none; padding: 0;">Recent Transactions</h3>
+                  <button class="text-btn" onclick="downloadStatement()" style="font-size: 13px;">Download CSV</button>
+              </div>
+              <ul id="history-list" class="history-list"></ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

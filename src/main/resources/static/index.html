@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Bank - Digital ATM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <main class="atm-container">
+        <header>
+            <div class="logo">Nexus<span>Bank</span></div>
+            <div class="status-indicator">Online</div>
+        </header>
+
+        <section class="balance-card">
+            <h2>Total Balance</h2>
+            <div class="amount-display">
+                <span class="currency">$</span>
+                <span id="balance-val">0.00</span>
+            </div>
+            <div class="card-chip"></div>
+        </section>
+
+        <section class="actions">
+            <div class="input-group">
+                <label for="amount">Transaction Amount</label>
+                <input type="number" id="amount" placeholder="0.00" step="0.01">
+            </div>
+            <div class="button-grid">
+                <button onclick="handleTransaction('deposit')" class="btn btn-deposit">
+                    <i>+</i> Deposit
+                </button>
+                <button onclick="handleTransaction('withdraw')" class="btn btn-withdraw">
+                    <i>-</i> Withdraw
+                </button>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="section-header">
+                <h3>Recent Transactions</h3>
+                <button onclick="fetchTransactions()" class="refresh-btn">⟳</button>
+            </div>
+            <div class="transaction-list" id="transaction-list">
+                <!-- Transactions will be loaded here -->
+                <div class="loading">Loading history...</div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
