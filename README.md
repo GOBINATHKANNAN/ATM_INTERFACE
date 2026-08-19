@@ -1,23 +1,42 @@
-# GOB Bank - ATM Interface
+# ATM Interface
 
-## 📌 Project Overview
-**GOB Bank** is a professional, industry-standard ATM interface application designed as a comprehensive college project submission. It upgrades a traditional ATM system with a sleek, corporate-style User Interface and practical, real-world banking features.
+A Java-based ATM application demonstrating core banking workflows, file-based persistence, and a browser-oriented user interface.
 
-## ✨ Key Features
-- **Modern Corporate UI:** A sleek, user-friendly, and professional financial interface.
-- **Permanent Data Persistence:** Uses a secure file-based storage system to ensure account data and transaction history are saved permanently.
-- **Banking Operations:** Standard ATM functionalities including Cash Withdrawal, Deposit, and Balance Checking.
-- **Statement Downloads:** Real-world functionality allowing users to download their transaction statements.
+## Overview
 
-## 🛠️ Technology Stack
-- **Backend:** Java
-- **Frontend:** HTML, CSS, JavaScript
-- **Data Storage:** File-based persistence
+The project models common ATM operations while focusing on clean application flow and persistent transaction data.
 
-## 🚀 How to Run
-1. Ensure you have Java installed on your system.
-2. Compile and run the main server/application file.
-3. Access the interface via the provided HTML view or local server port.
+## Features
 
----
-*Developed by Gobinath Kannan.*
+- Account balance checking
+- Cash withdrawal
+- Cash deposit
+- Transaction history
+- Statement generation/download
+- Persistent account data using file storage
+- User-oriented web interface
+
+## Technology Stack
+
+- **Java** — application logic
+- **HTML** — interface structure
+- **CSS** — styling
+- **JavaScript** — client-side interaction
+- **File storage** — persistence
+
+## Getting Started
+
+1. Install a current JDK.
+2. Clone the repository.
+3. Compile the Java source files.
+4. Start the application according to the source entry point.
+5. Open the provided interface when the local application is running.
+
+## Engineering Focus
+
+This project demonstrates object-oriented programming, application state management, file handling, transaction-oriented workflows, and integration between application logic and a user interface.
+
+## Author
+
+Gobinath Kannan  
+B.Tech — Computer Science and Business Systems, Thiagarajar College of Engineering
